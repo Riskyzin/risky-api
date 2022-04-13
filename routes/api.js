@@ -1,16 +1,3 @@
-// Jika ada bug / eror mohon maklumi om , ini cuma latihan buat sy untuk belajar dikit" soal programing
-// Gada reupload" 😏
-// Klo mau colong fitur, jgn asal colong bodoh ntr api eror
-
-// Thanks to ( jgn di hapus jamet)
-/*
-<p> Loli Killers</p>
-<p> Rynz</p>
-<p> Eka Danuarta</p>
-<p> ZeeoneOfc </p>
-<p> Creative Time [ For Template ]</p>
-<p> ALL HUMAN</p>
-*/
 __path = process.cwd()
 
 var aexm = require('@lolikillers/aexm-api');
@@ -22,8 +9,8 @@ var lolkill = db.get("lolkill");
 	console.log('')
 }
 
-var creator = 'RiskyModz' // ubah jadi nama lu
-const listkey = ["Riskybot","Riskyapi","ZeeoneOfc"]; // ubah apikey nya, tambah aja klo mau
+var criaor = 'RiskyModz' // ubah jadi nama lu
+const listkey = ["Riskybot","Riskyapi","Riskyzin"]; // ubah apikey nya, tambah aja klo mau
 
 var axios = require('axios');
 var qs = require('qs');
@@ -58,20 +45,20 @@ loghandler = {
     error: {
         status: false,
         code: 503,
-        message: 'Service Unavaible, Sedang dalam perbaikan',
-        maintanied_by: `${creator}`
+        message: 'Serviço indisponível, em construção',
+        maintanied_by: `${criador}`
     },
     notapikey: {
     	status: false,
     	code: 403,
-    	message: 'Forbiden, Invalid apikey, hubungi saya di whatsapp untuk mendapatkan apikey anda',
-    	maintanied_by: `${creator}`
+    	message: 'Proibido, apikey inválido, entre em contato comigo no whatsapp para obter seu apikey',
+    	maintanied_by: `${criador}`
     },
     noturl: {
     	status: false,
     	code: 403,
-    	message: 'Forbiden, Invlid url, masukkan parameter url',
-    	maintanied_by: `${creator}`,
+    	message: 'Proibido, url inválido, insira o parâmetro url',
+    	maintanied_by: `${criador}`,
     }
 }
 
@@ -115,8 +102,8 @@ var len = 15
         .then(() => {
               res.json({
                   status: true,
-                  creator: `${creator}`,
-                  result: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
+                  creator: `${criador}`,
+                  resultado: 'berhasil menambah data, status : ' + status + ', apikey : ' + apikeyInput + ', email : ' + email + ', nomor_hp : ' + nomorhp + ', name :  ' + name + ', age : ' + age + ', country : ' + country + ', exp : ' + exp
               })
         })
     } catch (e) {
@@ -133,7 +120,7 @@ router.get('/cekapikey', async (req, res, next) => {
 	json = JSON.stringify({
 		status: true,
 		creator: creator,
-		result: {
+		resultado: {
             status:a.status,
 			id: a._id,
 			apikey: a.apikey,
@@ -146,7 +133,7 @@ router.get('/cekapikey', async (req, res, next) => {
 				exp:a.exp,
 			},
 		},
-		message: `jangan lupa follow ${creator}`
+		message: `jangan lupa follow ${criador}`
 	})
 } else {
 	json = JSON.stringify({
@@ -481,7 +468,7 @@ router.get('/download/facebook', async (req, res, next) => {
           var apikey = req.query.apikey
           var url = req.query.url
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter url"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://fb-api-zhirrr.vercel.app/?url=${url}`))
         .then(response => response.json())
@@ -503,7 +490,7 @@ router.get('/download/instagram', async (req, res, next) => {
           var apikey = req.query.apikey
           var url = req.query.url
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter url"})
         if(listkey.includes(apikey)){
        aexm.igdl(url)
 	.then(data => {
@@ -524,7 +511,7 @@ router.get('/download/igstory', async (req, res, next) => {
           var apikey = req.query.apikey
           var url = req.query.username
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter username"})
         if(listkey.includes(apikey)){
        aexm.igstory(url)
 	.then(data => {
@@ -545,7 +532,7 @@ router.get('/download/pinterest', async (req, res, next) => {
           var apikey = req.query.apikey
           var url = req.query.q
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter q"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter q"})
         if(listkey.includes(apikey)){
        aexm.pinterest(q)
 	.then(data => {
@@ -566,7 +553,7 @@ router.get('/download/tiktok', async (req, res, next) => {
           var apikey = req.query.apikey
           var url = req.query.url
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter url"})
         if(listkey.includes(apikey)){
        aexm.ttdownloader(url)
 	.then(data => {
@@ -587,7 +574,7 @@ router.get('/download/ytmp3', async (req, res, next) => {
           var apikey = req.query.apikey
           var url = req.query.url
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter url"})
         if(listkey.includes(apikey)){
        aexm.youtube(url)
 			.then(data => {
@@ -608,7 +595,7 @@ router.get('/download/ytsearch', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://yutub-api-zaahirr.herokuapp.com/search?q=${url}`))
         .then(response => response.json())
@@ -631,7 +618,7 @@ router.get('/download/ytmp4', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.url
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter url"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/ytv?url=${url}`))
         .then(response => response.json())
@@ -655,7 +642,7 @@ router.get('/lk21/search', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.film
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter film"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/search?query=${url}`))
         .then(response => response.json())
@@ -744,7 +731,7 @@ router.get('/lk21/year', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.tahun
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tahun"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter tahun"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/year?year=${url}`))
         .then(response => response.json())
@@ -767,7 +754,7 @@ router.get('/lk21/country', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.country
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter country"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter country"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/country?country=${url}`))
         .then(response => response.json())
@@ -790,7 +777,7 @@ router.get('/lk21/genre', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.tipe
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter tipe"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter tipe"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://lk21-api-zahirr.herokuapp.com/genre?genre=${url}`))
         .then(response => response.json())
@@ -815,7 +802,7 @@ router.get('/filmapik/search', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.film
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter film"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/search?q=${url}`))
         .then(response => response.json())
@@ -838,7 +825,7 @@ router.get('/filmapik/kategori', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.film
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter film"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter film"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/category?search=${film}`))
         .then(response => response.json())
@@ -861,7 +848,7 @@ router.get('/filmapik/play', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.id
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter id"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter id"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/play?id=${url}`))
         .then(response => response.json())
@@ -908,7 +895,7 @@ router.get('/news/cnn', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.type
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter type"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/cnn-news/${url}`))
         .then(response => response.json())
@@ -931,7 +918,7 @@ router.get('/news/cnbc', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.type
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter type"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/cnbc-news/${url}`))
         .then(response => response.json())
@@ -954,7 +941,7 @@ router.get('/news/republika', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.type
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter type"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/republika-news/${url}`))
         .then(response => response.json())
@@ -977,7 +964,7 @@ router.get('/news/tempo', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.type
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter type"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/tempo-news/${url}`))
         .then(response => response.json())
@@ -1000,7 +987,7 @@ router.get('/news/antara', async (req, res, next) => {
           var apikey = req.query.apikey
        	var url = req.query.type
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter type"})      
+       if (!url) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter type"})      
        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://news-api-zhirrr.vercel.app/v1/antara-news/${url}`))
         .then(response => response.json())
@@ -1047,7 +1034,7 @@ router.get('/photooxy/naruto', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1068,12 +1055,12 @@ router.get('/photooxy/naruto', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1091,7 +1078,7 @@ router.get('/photooxy/grafity_text', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1112,12 +1099,12 @@ router.get('/photooxy/grafity_text', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1135,7 +1122,7 @@ router.get('/photooxy/petterns', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1156,12 +1143,12 @@ router.get('/photooxy/petterns', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1179,7 +1166,7 @@ router.get('/photooxy/text_on_cup', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1200,12 +1187,12 @@ router.get('/photooxy/text_on_cup', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1223,7 +1210,7 @@ router.get('/photooxy/3d_summer', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1244,12 +1231,12 @@ router.get('/photooxy/3d_summer', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1267,7 +1254,7 @@ router.get('/photooxy/3d_nature', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1288,12 +1275,12 @@ router.get('/photooxy/3d_nature', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1311,7 +1298,7 @@ router.get('/photooxy/wolf_metal', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1332,12 +1319,12 @@ router.get('/photooxy/wolf_metal', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1355,7 +1342,7 @@ router.get('/photooxy/wood_heart', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1376,12 +1363,12 @@ router.get('/photooxy/wood_heart', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1399,7 +1386,7 @@ router.get('/photooxy/flower_heart', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1420,12 +1407,12 @@ router.get('/photooxy/flower_heart', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1443,7 +1430,7 @@ router.get('/photooxy/wooden_board', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1464,12 +1451,12 @@ router.get('/photooxy/wooden_board', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1488,8 +1475,8 @@ router.get('/photooxy/tiktok_effect', async (req, res, next) => {
        	var text = req.query.text
        var text2 = req.query.text2
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
-       if (!text2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text2"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
+       if (!text2) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text2"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1510,12 +1497,12 @@ router.get('/photooxy/tiktok_effect', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1533,7 +1520,7 @@ router.get('/photooxy/double_heart', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1554,12 +1541,12 @@ router.get('/photooxy/double_heart', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1577,7 +1564,7 @@ router.get('/photooxy/coffee_cup', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1598,12 +1585,12 @@ router.get('/photooxy/coffee_cup', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1621,7 +1608,7 @@ router.get('/photooxy/under_grass', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1642,12 +1629,12 @@ router.get('/photooxy/under_grass', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1665,7 +1652,7 @@ router.get('/photooxy/text_on_cup2', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1686,12 +1673,12 @@ router.get('/photooxy/text_on_cup2', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1709,7 +1696,7 @@ router.get('/photooxy/romantic_text', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1730,12 +1717,12 @@ router.get('/photooxy/romantic_text', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1753,7 +1740,7 @@ router.get('/photooxy/burn_paper', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1774,12 +1761,12 @@ router.get('/photooxy/burn_paper', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1797,7 +1784,7 @@ router.get('/photooxy/shadow_text', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.text
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter text"})      
          if(listkey.includes(apikey)){
        try {
             request.post({
@@ -1818,12 +1805,12 @@ router.get('/photooxy/shadow_text', async (req, res, next) => {
                                     var urlnya = data.data.url,
                                         delete_url = data.data.delete_url;
                                         res.json({
-                                            result:{
+                                            resultado:{
                                                 url:urlnya,
                                             },
                                         	message: `Ok`,
 											status: `Success`,
-											maintanied_by: `${creator}`
+											maintanied_by: `${criador}`
                                         })
                                 })
                         })
@@ -1843,7 +1830,7 @@ router.get('/search/joox', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        fetch(encodeURI(`https://arnz-api-production.up.railway.app/api/joox/search?q=${text}`))
         .then(response => response.json())
@@ -1853,7 +1840,7 @@ router.get('/search/joox', async (req, res, next) => {
              	message: `Ok`,
              	status: `Success`,
              	data,
-             	maintanied_by: `${creator}`
+             	maintanied_by: `${criador}`
              })
          })
          .catch(e => {
@@ -1868,7 +1855,7 @@ router.get('/search/wallpaper', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        aexm.chara(text)
 	.then(data => {
@@ -1889,7 +1876,7 @@ router.get('/search/wattpad', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        aexm.wattpad(text)
 	.then(data => {
@@ -1910,7 +1897,7 @@ router.get('/search/komiku', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        aexm.komiku(text)
 	.then(data => {
@@ -1931,7 +1918,7 @@ router.get('/search/otaku', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        aexm.otakudesu(text)
 	.then(data => {
@@ -1952,7 +1939,7 @@ router.get('/search/anime', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        fetch(encodeURI(`https://arnz-api-production.up.railway.app/api/anime/search?q=${q}`))
         .then(response => response.json())
@@ -1961,7 +1948,7 @@ router.get('/search/anime', async (req, res, next) => {
              res.json({
              	message: `Ok`,
              	status: `Success`,
-             	maintanied_by: `${creator}`,
+             	maintanied_by: `${criador}`,
              	data
              })
          })
@@ -1979,7 +1966,7 @@ router.get('/anime/searchanime', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        fetch(encodeURI(`https://arnz-api-production.up.railway.app/api/anime/search?q=${q}`))
         .then(response => response.json())
@@ -1988,7 +1975,7 @@ router.get('/anime/searchanime', async (req, res, next) => {
              res.json({
              	message: `Ok`,
              	status: `Success`,
-             	maintanied_by: `${creator}`,
+             	maintanied_by: `${criador}`,
              	data
              })
          })
@@ -2004,7 +1991,7 @@ router.get('/anime/samehadaku_genre', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.query
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})      
+       if (!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter query"})      
          if(listkey.includes(apikey)){
        fetch(encodeURI(`https://arnz-samehadaku.herokuapp.com/genre/${text}`))
         .then(response => response.json())
@@ -2014,7 +2001,7 @@ router.get('/anime/samehadaku_genre', async (req, res, next) => {
              	data,
              	message: `Ok`,
              	status: `Success`,
-             	maintanied_by: `${creator}`
+             	maintanied_by: `${criador}`
              })
          })
          .catch(e => {
@@ -2038,7 +2025,7 @@ router.get('/anime/samehadaku_page', async (req, res, next) => {
              	data,
              	message: `Ok`,
              	status: `Success`,
-             	maintanied_by: `${creator}`
+             	maintanied_by: `${criador}`
              })
          })
          .catch(e => {
@@ -2062,7 +2049,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2085,7 +2072,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2108,7 +2095,7 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2131,7 +2118,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2154,7 +2141,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2177,7 +2164,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2200,7 +2187,7 @@ router.get('/nsfw/ero', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2223,7 +2210,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2246,7 +2233,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2269,7 +2256,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2292,7 +2279,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2315,7 +2302,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2338,7 +2325,7 @@ router.get('/nsfw/hentaigif', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2361,7 +2348,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2384,7 +2371,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2407,7 +2394,7 @@ router.get('/nsfw/neko', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2430,7 +2417,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2453,7 +2440,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2476,7 +2463,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2499,7 +2486,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2522,7 +2509,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	creator : `${creator}`,
+             	creator : `${criador}`,
                  result
              })
          })
@@ -2837,7 +2824,7 @@ router.get('/other/ghstalk', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.username
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-        if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
+        if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter username"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://github-api-zhirrr.vercel.app/api/detailuser?q=${text}`))
         .then(response => response.json())
@@ -2860,7 +2847,7 @@ router.get('/other/repostalk', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.username
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
+       if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter username"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://github-api-zhirrr.vercel.app/api/searchrepo?q=${text}`))
         .then(response => response.json())
@@ -2883,7 +2870,7 @@ router.get('/other/hilih', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.kata
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-        if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
+        if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter kata"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://hilih-api-zhirrr.vercel.app/api/hilih?kata=${text}`))
         .then(response => response.json())
@@ -2905,7 +2892,7 @@ router.get('/other/fakedata', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.country
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter country"})
+       if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter country"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://fakename-api-zhirrr.vercel.app/api/fakename?country=${text}`))
         .then(response => response.json())
@@ -2927,7 +2914,7 @@ router.get('/other/drakorasi', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.search
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+       if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter search"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`http://docs-api-zahirrr.herokuapp.com/api/drakorasia?search=${text}`))
         .then(response => response.json())
@@ -2949,7 +2936,7 @@ router.get('/other/translate', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.kata
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
+       if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter kata"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/translate?text=${text}`))
         .then(response => response.json())
@@ -3034,7 +3021,7 @@ router.get('/other/kodepos', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.kota
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
+       if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter kota"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://kodepos-api-zhirrr.vercel.app/?q=${text}`))
         .then(response => response.json())
@@ -3098,7 +3085,7 @@ router.get('/other/kbbi', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.kata
        	if(!apikey) return res.sendFile(__path + '/docs/403.html')
-       if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
+       if(!text) return res.json({ status : false, creator : `${criador}`, message : "masukan parameter kata"})
         if(listkey.includes(apikey)){
        fetch(encodeURI(`https://kbbi-api-zhirrr.vercel.app/api/kbbi?text=${text}`))
         .then(response => response.json())
