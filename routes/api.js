@@ -22,7 +22,7 @@ var lolkill = db.get("lolkill");
 	console.log('')
 }
 
-var creator = 'ZeeoneOfc' // ubah jadi nama lu
+var creator = 'RiskyModz' // ubah jadi nama lu
 const listkey = ["Riskybot","Riskyapi","ZeeoneOfc"]; // ubah apikey nya, tambah aja klo mau
 
 var axios = require('axios');
