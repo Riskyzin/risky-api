@@ -1,5 +1,5 @@
 {
-  "name": "api-akame",
+  "name": "api-risky",
   "version": "1.1.0",
   "description": "Nothing",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://git.heroku.com/base-api-akame.git"
+    "url": "git+https://github.com/Riskyzin/risky-api.git"
   },
   "keywords": [
     "simple",
@@ -17,10 +17,10 @@
     "rest",
     "api"
   ],
-  "author": "Breno",
+  "author": "Risky",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brenomakerr/akame-base-api"
+    "url": "https://github.com/Riskyzin/risky-api"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -32,5 +32,5 @@
     "ytdl-core": "^4.4.5",
     "yt-search": "^2.7.3"
   },
-  "homepage": "https://github.com/brenomakerr/akame-base-api"
+  "homepage": "https://github.com/Riskyzin/risky-api"
 }
