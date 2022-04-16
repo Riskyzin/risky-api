@@ -1,24 +1,26 @@
-var express = require('express'),
-    cors = require('cors'),
-    secure = require('ssl-express-www');
-const PORT = process.env.PORT || 8080 || 5000 || 3000
-var { color } = require('./lib/color.js')
+console.log('Iniciando....')
+var express = require('express')
+var cors = require('cors')
+var morgan = require('morgan');
+var secure = require('ssl-express-www')
 
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
+const PORT = process.env.PORT || 8080
+
+var mainrouter = require('./apis')
 
 var app = express()
 app.enable('trust proxy');
+app.use(morgan('dev'));
 app.set("json spaces",2)
 app.use(cors())
 app.use(secure)
-app.use(express.static("assets"))
+app.use(express.static("public"))
 
 app.use('/', mainrouter)
-app.use('/docs', apirouter)
 
 app.listen(PORT, () => {
-    console.log(color("Server running on port " + PORT,'green'))
+    console.log('Conectando...')
+    console.log("Servidor rodando em http://localhost:" + PORT)
 })
 
 module.exports = app
