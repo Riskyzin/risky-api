@@ -1,36 +1,45 @@
 {
-  "name": "api-akame",
-  "version": "1.1.0",
-  "description": "Nothing",
+  "name": "Alphabot-api",
+  "version": "1.0.0",
+  "description": "res api website",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://git.heroku.com/base-api-akame.git"
+    "url": "git+ssh://git@github.com/LoliKillers/Arnz-Api.git"
   },
-  "keywords": [
-    "simple",
-    "loli",
-    "rest",
-    "api"
-  ],
-  "author": "Breno",
+  "author": "LolKill & Zee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brenomakerr/akame-base-api"
+    "url": "https://github.com/zeeneofc/"
   },
+  "homepage": "https://github.com/zeeoneofc",
   "dependencies": {
+    "@lolikillers/aexm-api": "github:Aexm47/AEXM47",
+    "axios": "^0.21.1",
+    "base-64": "^1.0.0",
+    "base32": "0.0.6",
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.1",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.3",
+    "monk": "^7.3.3",
     "morgan": "^1.10.0",
+    "needle": "^2.6.0",
+    "node-fetch": "^2.6.1",
+    "qs": "^6.10.1",
+    "request": "^2.88.2",
+    "scrape-yt": "^1.4.8",
     "ssl-express-www": "^3.0.7",
-    "canvacord": "^5.1.0",
+    "urlencode": "^1.1.0",
     "ytdl-core": "^4.4.5",
-    "yt-search": "^2.7.3"
-  },
-  "homepage": "https://github.com/brenomakerr/akame-base-api"
+    "ytpl": "^2.0.5"
+  }
 }
